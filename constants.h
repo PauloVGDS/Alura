@@ -14,6 +14,8 @@ typedef struct pos POSICAO;
 
 #define FANTASMA 'F'
 #define HEROI '@'
+#define PILULA 'P'
+#define BOMBA 'b'
 #define PAREDE_VERTICAL '|'
 #define PAREDE_HORIZONTAL '-'
 #define CAMINHO '.'

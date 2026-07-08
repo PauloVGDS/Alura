@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <stdbool.h>
 #include "main.h"
 
 MAPA mapa1;
 POSICAO atual;
+bool red_pill = false;
 
 int acabou() {
     POSICAO pos;
@@ -98,10 +100,25 @@ void move(char direcao) {
 
     if(!canWalk(&mapa1, HEROI, nextx, nexty)) return;
 
+    if(isProta(&mapa1, PILULA, nextx, nexty)) {
+        red_pill = true;
+    }
+
     walk(&mapa1, atual.x, atual.y, nextx, nexty);
     atual.x = nextx;
     atual.y = nexty;
 
+}
+
+void pillExplode() {
+    for (int i = 1; i <= 3; i++) {
+        printf("%i", i);
+
+        if (isValid(&mapa1, atual.x, atual.y+i)) {
+            if (isWall(&mapa1, atual.x, atual.y+i)) break;
+            mapa1.matriz[atual.x][atual.y+i] = CAMINHO;
+        }
+    }
 }
 
 
@@ -132,7 +149,7 @@ int main() {
     
     do
     {
-        
+        printf("E redpill? %s\n", red_pill == true ? "SIM" : "NAO");
         printMap(&mapa1);
 
         char direction;
@@ -140,6 +157,9 @@ int main() {
         scanf(" %c", &direction);
         printf("\n");
         move(direction);
+        
+        if (direction == BOMBA) pillExplode();
+
         fantasmas();
         
     } while (!acabou());
