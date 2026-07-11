@@ -111,14 +111,29 @@ void move(char direcao) {
 }
 
 void pillExplode() {
-    for (int i = 1; i <= 3; i++) {
-        printf("%i", i);
 
-        if (isValid(&mapa1, atual.x, atual.y+i)) {
-            if (isWall(&mapa1, atual.x, atual.y+i)) break;
-            mapa1.matriz[atual.x][atual.y+i] = CAMINHO;
-        }
-    }
+    if (!red_pill) return;
+
+    pillExplode2(atual.x, atual.y, 0, 1, 3);
+    pillExplode2(atual.x, atual.y, 0, -1, 3);
+    pillExplode2(atual.x, atual.y, 1, 0, 3);
+    pillExplode2(atual.x, atual.y, -1, 0, 3);
+
+    red_pill = false; 
+}
+
+void pillExplode2(int x, int y, int somax, int somay, int qnt) {
+    
+    if (qnt == 0) return;
+    
+    int novox = x + somax;
+    int novoy = y + somay;
+
+    if (isWall(&mapa1, novox, novoy)) return;
+    if (!isValid(&mapa1, novox, novoy)) return;
+
+    mapa1.matriz[novox][novoy] = CAMINHO;
+    pillExplode2(novox, novoy, somax, somay, qnt - 1);
 }
 
 

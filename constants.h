@@ -12,6 +12,9 @@ struct pos {
 typedef struct map MAPA;
 typedef struct pos POSICAO;
 
+void pillExplode2(int x, int y, int somax, int somay, int qnt);
+void pillExplode();
+
 #define FANTASMA 'F'
 #define HEROI '@'
 #define PILULA 'P'
