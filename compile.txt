@@ -1,0 +1,9 @@
+win:
+g++ -g main.cpp -o main.exe && .\main.exe && rm .\main.exe
+
+linux:
+g++ -g main.cpp -o main.exe && ./main.exe && rm ./main.exe
+
+
+alias compile="[comando]"
+alias compile="g++ -g main.cpp -o main.exe && ./main.exe && rm ./main.exe"
