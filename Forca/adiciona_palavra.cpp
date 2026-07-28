@@ -1,8 +1,7 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include "le_arquivo.hpp"
 #include "salva_arquivo.hpp"
+#include "adiciona_palavra.hpp"
+
 
 
 void adiciona_palavra(){

@@ -1,12 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <map>
 #include "letra_existe.hpp"
+#include "chuta.hpp"
 
-extern std::map<char, bool> chutou;
-extern std::vector<char> chutes_errados;
-
-void chuta(){
+void chuta(std::map<char, bool>& chutou, std::vector<char>& chutes_errados) {
     std::cout << "Seu chute: ";
     char chute;
     std::cin >> chute;

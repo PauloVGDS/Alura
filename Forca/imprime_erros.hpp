@@ -1,3 +1,5 @@
 #pragma once
+#include <iostream>
+#include <vector>
 
-void imprime_erros();
+void imprime_erros(const std::vector<char>& chutes_errados);
