@@ -1,2 +1,50 @@
-.vscode
+# ==========================================
+# Compilação e Binários do C++ (Geral)
+# ==========================================
+*.obj
+*.o
+*.pdb
+*.ilk
 *.exe
+*.out
+*.app
+*.lib
+*.a
+*.dll
+*.so
+*.dylib
+
+# ==========================================
+# Pastas de Saída do Visual Studio (Build)
+# ==========================================
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ARM/
+ARM64/
+
+# ==========================================
+# Arquivos de Cache e Configuração da IDE	
+# ==========================================
+# Cache de IntelliSense e banco de dados do projeto (Geralmente muito grandes)
+.vs/
+*.ncb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arquivos gerados pelo MSBuild
+*.sdf
+*.opensdf
+*.tlog
+*.log
+*.idb
+
+# Cache do CMake (caso use CMake no Visual Studio)
+CMakeSettings.json
+CMakeBuild/
+out/
+
+.vscode

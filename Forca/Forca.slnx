@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Forca.vcxproj" Id="41daeb43-62da-48e5-963f-38321054b6a8" />
+</Solution>
