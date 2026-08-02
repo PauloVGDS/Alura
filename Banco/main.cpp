@@ -13,17 +13,14 @@ void exibeSaldo(const Conta& conta) {
 
 int main()
 {
-    Titular titular("Paulo Vinicius", Cpf("123.456.789-10"));
 
-    Conta umaConta("123456", titular);
+    Conta umaConta("123456", Titular("Paulo Vinicius", Cpf("123.456.789-10")));
 
     umaConta.depositar(2000);
 
-    umaConta.depositar(1000);
-
     cout << umaConta.recuperaSaldo() << endl;
 
-    umaConta.sacar(1000);
+    umaConta.sacar(750);
 
     cout << umaConta.recuperaSaldo() << endl;
     cout << "Numero: " << umaConta.recuperaNumero() << endl;
