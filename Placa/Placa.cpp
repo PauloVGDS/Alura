@@ -1,18 +1,18 @@
 #include "Placa.h"
 #include <iostream>
 
-void Sensores::exibir() const {
+void SensorClasse::exibir() const {
     std::cout << "Informações de " << nome << std::endl;
     std::cout << "Pino: " << pino << std::endl;
-    std::cout << "Temperatura atual: " << valor << std::endl;
+    std::cout << "Valor atual: " << valor << std::endl;
 }
 
-float Sensores::getValor() const {
+float SensorClasse::getValor() const {
     return valor;
 }
 
-void Sensores::setValor(float val) {
-    if (!(val > -50 && val < 150)) {
+void SensorClasse::setValor(float val) {
+    if (val < -50 || val > 150) {
         std::cout << "Valor Inválido!" << std::endl;
         return;
     }
@@ -20,8 +20,8 @@ void Sensores::setValor(float val) {
 }
 
 
-void exibirSensor(Sensor& sensor) {
+void exibirSensor(const Sensor& sensor) {
     std::cout << "Informações de " << sensor.nome << std::endl;
     std::cout << "Pino: " << sensor.pino << std::endl;
-    std::cout << "Temperatura atual: " << sensor.valor << std::endl;
+    std::cout << "Valor atual: " << sensor.valor << std::endl;
 }

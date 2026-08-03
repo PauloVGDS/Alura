@@ -141,10 +141,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ContaCredito.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Placa.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ContaCredito.h" />
     <ClInclude Include="Placa.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
