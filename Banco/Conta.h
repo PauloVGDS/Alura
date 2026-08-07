@@ -7,19 +7,19 @@ class Conta {
 private:
     std::string numero;
     Titular titular;
-    float saldo;
 
-    void verificaTamanhoNome();
+protected:
+    float saldo;
 
 public:
     Conta(std::string numero, Titular titular);
-    ~Conta();
+    virtual ~Conta();
 
     static int numeroDeContas;
 
-    void sacar(float valorASacar);
-    void depositar(float valorADepositar);
-
+    virtual void sacar(float valorASacar);
+    virtual void depositar(float valorADepositar);
+    virtual float taxaDeSaque() const;
     // Getters
     float recuperaSaldo() const;
     std::string recuperaNumero();
