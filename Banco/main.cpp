@@ -5,6 +5,7 @@
 #include "Cpf.h"
 #include "Funcionario.h"
 #include "ContaPoupanca.h"
+#include "ContaCorrente.h"
 
 using namespace std;
 
@@ -28,7 +29,7 @@ int main()
 
 
     ContaPoupanca umaConta("123456", Titular("Paulo Vinicius", Cpf("123.456.789-10")));
-    Conta otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321.10")));
+    ContaCorrente otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321.10")));
 
     umaConta.depositar(2000.0f);
     otaConta.depositar(2000.0f);

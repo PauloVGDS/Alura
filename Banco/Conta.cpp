@@ -5,17 +5,13 @@ int Conta::numeroDeContas = 0;
 
 Conta::Conta(std::string num, Titular titular): 
     numero(num), titular(titular), saldo(0) {
-    std::cout << "Construtor Conta Corrente!" << std::endl;
+    std::cout << "Construtor Conta!" << std::endl;
     numeroDeContas++;
 }
 
 Conta::~Conta() {
-    std::cout << "Destrutor Conta Corrente!" << std::endl;
+    std::cout << "Destrutor Conta!" << std::endl;
     numeroDeContas--;
-}
-
-float Conta::taxaDeSaque() const {
-    return 0.05;
 }
 
 void Conta::sacar(float valorASacar) {
@@ -41,7 +37,6 @@ void Conta::depositar(float valorADepositar) {
         std::cout << "Não pode depositar valor negativo!\n";
         return;
     }
-    std::cout << "Deposito Corrente\n";
     saldo += valorADepositar;
 }
 

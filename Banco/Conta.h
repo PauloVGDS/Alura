@@ -19,7 +19,7 @@ public:
 
     virtual void sacar(float valorASacar);
     virtual void depositar(float valorADepositar);
-    virtual float taxaDeSaque() const;
+    virtual float taxaDeSaque() const = 0;
     // Getters
     float recuperaSaldo() const;
     std::string recuperaNumero();

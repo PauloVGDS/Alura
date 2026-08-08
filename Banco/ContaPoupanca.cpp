@@ -10,14 +10,7 @@ ContaPoupanca::~ContaPoupanca() {
 }
 
 float ContaPoupanca::taxaDeSaque() const {
-    return 0.03;
+    std::cout << "Método Sacar da Conta Poupança!\n";
+    return 0.03f;
 }
 
-void ContaPoupanca::depositar(float valorADepositar) {
-    if (valorADepositar < 0) {
-        std::cout << "Não pode depositar valor negativo!\n";
-        return;
-    }
-    std::cout << "Deposito Poupança\n";
-    saldo += valorADepositar;
-}
