@@ -9,5 +9,6 @@ public:
     ContaPoupanca(std::string numero, Titular titular);
     ~ContaPoupanca();
     float taxaDeSaque() const override;
+    void transferePara(Conta& destino, float valor);
 };
 

@@ -29,26 +29,20 @@ int main()
 
 
     ContaPoupanca umaConta("123456", Titular("Paulo Vinicius", Cpf("123.456.789-10")));
-    ContaCorrente otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321.10")));
+    ContaCorrente otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321-10")));
 
     umaConta.depositar(2000.0f);
     otaConta.depositar(2000.0f);
 
     RealizaSaque(umaConta);
     RealizaSaque(otaConta);
-    cout << umaConta.recuperaSaldo() << endl;
-    cout << otaConta.recuperaSaldo() << endl;
+    cout << "Saldo 1: " << umaConta.recuperaSaldo() << endl;
+    cout << "Saldo 2: " << otaConta.recuperaSaldo() << endl;
     cout << endl; cout << endl;
 
-    RealizaDeposito(umaConta);
-    RealizaDeposito(otaConta);
-    cout << umaConta.recuperaSaldo() << endl;
-    cout << otaConta.recuperaSaldo() << endl;
-
-    umaConta.sacar(750.0f);
-
-    cout << umaConta.recuperaSaldo() << endl;
-    cout << "Numero: " << umaConta.recuperaNumero() << endl;
+    umaConta.transferePara(otaConta, 500);
+    cout << "Saldo 1: " << umaConta.recuperaSaldo() << endl;
+    cout << "Saldo 2: " << otaConta.recuperaSaldo() << endl;
 
     cout << "Quantidade de Contas: " << Conta::numeroDeContas << endl;
 

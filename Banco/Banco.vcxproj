@@ -139,21 +139,27 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Autenticavel.cpp" />
+    <ClCompile Include="Caixa.cpp" />
     <ClCompile Include="Conta.cpp" />
     <ClCompile Include="ContaCorrente.cpp" />
     <ClCompile Include="ContaPoupanca.cpp" />
     <ClCompile Include="Cpf.cpp" />
     <ClCompile Include="Funcionario.cpp" />
+    <ClCompile Include="Gerente.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pessoa.cpp" />
     <ClCompile Include="Titular.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Autenticavel.h" />
+    <ClInclude Include="Caixa.h" />
     <ClInclude Include="Conta.h" />
     <ClInclude Include="ContaCorrente.h" />
     <ClInclude Include="ContaPoupanca.h" />
     <ClInclude Include="Cpf.h" />
     <ClInclude Include="Funcionario.h" />
+    <ClInclude Include="Gerente.h" />
     <ClInclude Include="Pessoa.h" />
     <ClInclude Include="Titular.h" />
   </ItemGroup>

@@ -21,7 +21,7 @@ void ContaCredito::adicionarCreditos(int qnt) {
 }
 
 void ContaCredito::exibirStatus() const {
-	cout << "ID: " << idEquipamento << std::endl;
+	std::cout << "ID: " << idEquipamento << std::endl;
 	std::cout << "Quantidade de Créditos: " << creditos << std::endl;
 	std::cout << "Status de Bloqueio: " << (bloqueado ? "Bloqueado" : "Desbloqueado") << std::endl;
 }
