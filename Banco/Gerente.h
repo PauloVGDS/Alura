@@ -1,8 +1,10 @@
 #pragma once
 #include "Funcionario.h"
-class Gerente : public Funcionario
+#include  "Autenticavel.h"
+
+class Gerente : public Funcionario, public Autenticavel
 {
-	Gerente(std::string nome, Cpf cpf, float salario);
+	Gerente(std::string nome, Cpf cpf, float salario, std::string senha);
 	float bonificacao() const;
 };
 

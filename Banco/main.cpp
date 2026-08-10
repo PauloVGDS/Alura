@@ -23,13 +23,10 @@ void RealizaDeposito(Conta& conta) {
 
 int main()
 {
-    Funcionario func("Paulo Vinicius", Cpf("123.456.789-10"), 1800.0f);
-    cout << "Funcionário: " << func.recuperaNome() << endl;
-    cout << endl; cout << endl;
 
 
-    ContaPoupanca umaConta("123456", Titular("Paulo Vinicius", Cpf("123.456.789-10")));
-    ContaCorrente otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321-10")));
+    ContaPoupanca umaConta("123456", Titular("Paulo Vinicius", Cpf("123.456.789-10"), "umaSenha"));
+    ContaCorrente otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321-10"), "otaSenha"));
 
     umaConta.depositar(2000.0f);
     otaConta.depositar(2000.0f);
