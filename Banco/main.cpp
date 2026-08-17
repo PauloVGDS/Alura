@@ -21,6 +21,15 @@ void RealizaDeposito(Conta& conta) {
     conta.depositar(200);
 }
 
+void fazLogin(Autenticavel& alguem, std::string senha) {
+    if (alguem.autentica(senha)) {
+        std::cout << "Login realizado!" << std::endl;
+        return;
+    }
+    std::cout << "Senha Incorreta!" << std::endl;
+
+}
+
 int main()
 {
 
