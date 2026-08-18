@@ -1,6 +1,7 @@
+#include "Titular.hpp"
 #include <iostream>
-#include "Titular.h"
 
-Titular::Titular(std::string nome, Cpf cpf, std::string senha):
-	Pessoa(nome, cpf), Autenticavel(senha) {
+Titular::Titular(Cpf cpf, std::string nome, std::string senha)
+    : Pessoa(cpf, nome), Autenticavel(senha)
+{
 }

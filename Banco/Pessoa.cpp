@@ -1,14 +1,15 @@
 #include <iostream>
-#include "Pessoa.h"
+#include "Pessoa.hpp"
 
-Pessoa::Pessoa(std::string nome, Cpf cpfTitula):
-	nome(nome), cpfTitular(cpfTitula){
-    verificaTamanhoNome();
+Pessoa::Pessoa(Cpf cpf, std::string nome): cpf(cpf), nome(nome)
+{
+    verificaTamanhoDoNome();
 }
 
-void Pessoa::verificaTamanhoNome() {
+void Pessoa::verificaTamanhoDoNome()
+{
     if (nome.size() < 5) {
-        std::cout << "Nome muito curto!" << std::endl;
+        std::cout << "Nome muito curto" << std::endl;
         exit(1);
     }
 }

@@ -1,60 +1,55 @@
 #include <iostream>
 #include <string>
-#include "Conta.h"
-#include "Titular.h"
-#include "Cpf.h"
-#include "Funcionario.h"
-#include "ContaPoupanca.h"
-#include "ContaCorrente.h"
+#include "Conta.hpp"
+#include "ContaCorrente.hpp"
+#include "ContaPoupanca.hpp"
+#include "Titular.hpp"
+#include "Cpf.hpp"
+#include "Funcionario.hpp"
 
 using namespace std;
 
-void exibeSaldo(const Conta& conta) {
-    cout << "Saldo da Conta: " << conta.recuperaSaldo() << endl;
+void ExibeSaldo(const Conta& conta)
+{
+    cout << "O saldo da conta é: " << conta.recuperaSaldo() << endl;
 }
 
-void RealizaSaque(Conta& conta) {
+void RealizaSaque(Conta& conta)
+{
     conta.sacar(200);
 }
 
-void RealizaDeposito(Conta& conta) {
-    conta.depositar(200);
-}
-
-void fazLogin(Autenticavel& alguem, std::string senha) {
+void FazLogin(Autenticavel& alguem, string senha)
+{
     if (alguem.autentica(senha)) {
-        std::cout << "Login realizado!" << std::endl;
-        return;
+        cout << "Login realizado com sucesso" << endl;
+    } else {
+        cout << "Senha inválida" << endl;
     }
-    std::cout << "Senha Incorreta!" << std::endl;
-
 }
 
 int main()
 {
+    Titular titular(Cpf("123.456.789-10"), "Vinicius", "umasenha");
 
-
-    ContaPoupanca umaConta("123456", Titular("Paulo Vinicius", Cpf("123.456.789-10"), "umaSenha"));
-    ContaCorrente otaConta("654321", Titular("Vinicius Paulo", Cpf("987.654.321-10"), "otaSenha"));
-
-    umaConta.depositar(2000.0f);
-    otaConta.depositar(2000.0f);
-
+    ContaPoupanca umaConta("123456", titular);
+    umaConta.depositar(500);
     RealizaSaque(umaConta);
-    RealizaSaque(otaConta);
-    cout << "Saldo 1: " << umaConta.recuperaSaldo() << endl;
-    cout << "Saldo 2: " << otaConta.recuperaSaldo() << endl;
-    cout << endl; cout << endl;
 
-    umaConta.transferePara(otaConta, 500);
-    cout << "Saldo 1: " << umaConta.recuperaSaldo() << endl;
-    cout << "Saldo 2: " << otaConta.recuperaSaldo() << endl;
+    ExibeSaldo(umaConta);
 
-    cout << "Quantidade de Contas: " << Conta::numeroDeContas << endl;
-
+    Titular outro(Cpf("098.765.432-10"), "Vinicius Dias", "outrasenha");
+    ContaCorrente umaOutraConta("654321", titular);
+    umaOutraConta.depositar(300);
     
+    ContaCorrente outraContaCorrente("546312", titular);
+    
+    umaOutraConta.transferePara(umaConta, 250);
 
-    
-    
+    ExibeSaldo(umaOutraConta);
+    ExibeSaldo(outraContaCorrente);
+
+    cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
+
     return 0;
 }

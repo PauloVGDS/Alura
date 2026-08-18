@@ -1,9 +1,11 @@
-#include "Caixa.h"
+#include "Caixa.hpp"
 
-Caixa::Caixa(std::string nome, Cpf cpf, float salario) : Funcionario(nome, cpf, salario) {
-
+Caixa::Caixa(Cpf cpf, std::string nome, float salario): Funcionario(cpf, nome, salario)
+{
 }
 
-float Caixa::bonificacao() const {
-	return recuperaSalario() * 0.1f;
+float Caixa::bonificacao() const
+{
+    return recuperaSalario() * 0.1;
 }
+

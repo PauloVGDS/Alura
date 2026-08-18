@@ -1,14 +1,12 @@
-#include "Cpf.h"
-#include <string>
+#include "Cpf.hpp"
+#include <iostream>
 
-Cpf::Cpf(std::string num): numero(num) {
-	verificaCpf();
+Cpf::Cpf(std::string numero): numero(numero)
+{
+    std::cout << "Cpf criado" << std::endl;
 }
 
-void Cpf::verificaCpf() {
-	return;
-}
-
-std::string Cpf::recuperaCpf() {
-	return numero;
+std::string Cpf::recuperaNumero() const
+{
+    return numero;
 }

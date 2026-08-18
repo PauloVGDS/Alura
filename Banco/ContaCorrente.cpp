@@ -1,15 +1,19 @@
-#include "ContaCorrente.h"
+#include "ContaCorrente.hpp"
+#include <iostream>
 
-ContaCorrente::ContaCorrente(std::string numero, Titular titular) :
-    Conta(numero, titular) {
-    std::cout << "Construtor Conta Corrente!" << std::endl;
+ContaCorrente::ContaCorrente(std::string numero, Titular titular): Conta(numero, titular)
+{
 }
 
-ContaCorrente::~ContaCorrente() {
-    std::cout << "Destrutor Conta Corrente!" << std::endl;
+float ContaCorrente::taxaDeSaque() const
+{
+    std::cout << "Chamando método sacar da conta corrente" << std::endl;
+
+    return 0.05;
 }
 
-float ContaCorrente::taxaDeSaque() const {
-    std::cout << "Método Sacar da Conta Corrente!\n";
-    return 0.05f;
+void ContaCorrente::transferePara(Conta& destino, float valor)
+{
+    sacar(valor);
+    destino.depositar(valor);
 }

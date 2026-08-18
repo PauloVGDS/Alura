@@ -1,60 +1,56 @@
-#include "Conta.h"
+#include "Conta.hpp"
 #include <iostream>
 
 int Conta::numeroDeContas = 0;
 
-Conta::Conta(std::string num, Titular titular): 
-    numero(num), titular(titular), saldo(0) {
-    std::cout << "Construtor Conta!" << std::endl;
+Conta::Conta(std::string numero, Titular titular):
+    numero(numero), 
+    titular(titular),
+    saldo(0)
+{
     numeroDeContas++;
 }
 
-Conta::~Conta() {
-    std::cout << "Destrutor Conta!" << std::endl;
+Conta::~Conta()
+{
+    std::cout << "Destrutor da conta" << std::endl;
     numeroDeContas--;
 }
 
-void Conta::sacar(float valorASacar) {
+void Conta::sacar(float valorASacar)
+{
     if (valorASacar < 0) {
-        std::cout << "Não pode sacar valor negativo!\n";
+        std::cout << "Não pode sacar valor negativo" << std::endl;
         return;
     }
-
 
     float tarifaDeSaque = valorASacar * taxaDeSaque();
-    valorASacar += tarifaDeSaque;
+    float valorDoSaque = valorASacar + tarifaDeSaque;
 
-    if (valorASacar > saldo) {
-        std::cout << "Saldo insuficiente!\n";
+    if (valorDoSaque > saldo) {
+        std::cout << "Saldo insuficiente" << std::endl;
         return;
     }
-    saldo -= valorASacar;
+
+    saldo -= valorDoSaque;
 }
 
-
-void Conta::depositar(float valorADepositar) {
+void Conta::depositar(float valorADepositar)
+{
     if (valorADepositar < 0) {
-        std::cout << "Não pode depositar valor negativo!\n";
+        std::cout << "Não pode sacar valor negativo" << std::endl;
         return;
     }
+
     saldo += valorADepositar;
 }
 
-float Conta::recuperaSaldo() const {
+float Conta::recuperaSaldo() const
+{
     return saldo;
 }
 
-std::string Conta::recuperaNumero() {
-    return numero;
+int Conta::recuperaNumeroDeContas()
+{
+    return numeroDeContas;
 }
-
-void Conta::defineNumero(std::string num) {
-    if (num.empty()) {
-        std::cout << "Insira um numero valido!" << std::endl;
-        return;
-    }
-    numero = num;
-}
-
-
-
